@@ -2,7 +2,8 @@
 
 ## 🎯 Übersicht
 
-Diese Chrome Extension zeigt **Druckzeit** und **Gewicht** direkt auf der MakerWorld-Übersichtsseite für jedes Modell an.
+Diese Chrome Extension zeigt **Druckzeit** und **Gewicht** direkt auf der MakerWorld-Übersichtsseite für jedes Modell
+an.
 
 ## 📂 Dateien
 
@@ -19,14 +20,17 @@ makerworld-extension/
 ## 🚀 Schnellstart (3 Schritte)
 
 ### 1️⃣ Chrome Extensions öffnen
+
 ```
 chrome://extensions/
 ```
 
 ### 2️⃣ Entwicklermodus aktivieren
+
 Toggle oben rechts aktivieren
 
 ### 3️⃣ Extension laden
+
 "Entpackte Erweiterung laden" → Diesen Ordner auswählen
 
 ## ✅ Fertig!
@@ -36,23 +40,27 @@ Besuche [makerworld.com](https://makerworld.com) und sieh dir die Modellübersic
 ## 📊 Was wird angezeigt?
 
 Für jedes Modell:
+
 - ⏱️ **Druckzeit** (z.B. "2h 30m")
 - ⚖️ **Gewicht** (z.B. "125.5g")
 
 ## 🔧 Technische Details
 
 ### API-Endpunkt
+
 ```
 https://makerworld.com/_next/data/{buildId}/{lang}/models/{id}-{slug}.json
 ```
 
 ### Extrahierte Daten
+
 ```javascript
 pageProps.design.instances[0].prediction  // Druckzeit in Sekunden
 pageProps.design.instances[0].weight      // Gewicht in Gramm
 ```
 
 ### Features
+
 - ✅ Automatische Build-ID-Erkennung
 - ✅ Mehrsprachig (de, en, es, fr, etc.)
 - ✅ Lazy Loading Support
@@ -63,6 +71,7 @@ pageProps.design.instances[0].weight      // Gewicht in Gramm
 ## 🐛 Debugging
 
 Öffne die Console (F12) und suche nach:
+
 ```
 MakerWorld Print Info Extension geladen
 Gefunden: X Design-Cards
@@ -79,6 +88,7 @@ Model XXXXX: Zeit=XXXs, Gewicht=XXXg
 ## 🔄 Updates
 
 Falls MakerWorld die API ändert:
+
 1. Öffne `content.js`
 2. Passe die JSON-Pfade an
 3. Lade Extension neu

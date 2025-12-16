@@ -12,23 +12,27 @@
             margin: 0 auto;
             background: #f5f5f5;
         }
+
         h1 {
             color: #333;
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         .subtitle {
             color: #666;
             font-size: 14px;
             margin-bottom: 30px;
         }
+
         .setting {
             margin: 20px 0;
             padding: 20px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         label {
             display: flex;
             align-items: center;
@@ -37,6 +41,12 @@
             font-weight: 500;
             color: #333;
         }
+
+        label[for]:not([for="unit"]):not([for="language"]) {
+            display: flex;
+            align-items: center;
+        }
+
         input[type="checkbox"] {
             width: 20px;
             height: 20px;
@@ -44,6 +54,7 @@
             cursor: pointer;
             accent-color: #4CAF50;
         }
+
         .description {
             margin-top: 10px;
             margin-left: 32px;
@@ -51,6 +62,7 @@
             color: #666;
             line-height: 1.5;
         }
+
         .status {
             margin-top: 15px;
             padding: 12px;
@@ -61,6 +73,7 @@
             text-align: center;
             font-weight: 500;
         }
+
         .hint {
             margin-top: 30px;
             padding: 15px;
@@ -70,36 +83,96 @@
             font-size: 14px;
             color: #1976D2;
         }
+
         .hint strong {
             display: block;
             margin-bottom: 5px;
         }
+
+        select {
+            margin-left: 12px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>MakerWorld Print Info</h1>
-    <div class="subtitle">Einstellungen für die Chrome Extension</div>
+<h1>MakerWorld Print Info</h1>
+<div class="subtitle">Einstellungen für die Chrome Extension</div>
 
-    <div class="setting">
-        <label>
-            <input type="checkbox" id="debugMode">
-            Debug-Modus aktivieren
-        </label>
-        <div class="description">
-            Zeigt detaillierte Entwickler-Informationen in der Browser-Konsole an (F12).
-            Hilfreich für Fehleranalyse und zum Nachvollziehen, was die Extension gerade macht.
-        </div>
+<div class="setting">
+    <label for="debugMode">
+        <input type="checkbox" id="debugMode">
+        Debug-Modus aktivieren
+    </label>
+    <div class="description">
+        Zeigt detaillierte Entwickler-Informationen in der Browser-Konsole an (F12).
+        Hilfreich für Fehleranalyse und zum Nachvollziehen, was die Extension gerade macht.
     </div>
+</div>
 
-    <div class="hint">
-        <strong>💡 Hinweis:</strong>
-        Änderungen werden automatisch gespeichert und sofort angewendet.
-        Du musst die Seite nicht neu laden.
+<div class="setting">
+    <label for="showPrintTime">
+        <input type="checkbox" id="showPrintTime">
+        Druckzeit anzeigen
+    </label>
+    <div class="description">
+        Blendet die geschätzte Druckzeit für das Modell ein oder aus.
     </div>
+</div>
 
-    <div class="status" id="status">✓ Einstellungen gespeichert!</div>
+<div class="setting">
+    <label for="showWeight">
+        <input type="checkbox" id="showWeight">
+        Gewicht anzeigen
+    </label>
+    <div class="description">
+        Blendet das geschätzte Gewicht für das Modell ein oder aus.
+    </div>
+</div>
 
-    <script src="options.js"></script>
+<div class="setting">
+    <label for="unit">Gewichtseinheit wählen:</label>
+    <select id="unit">
+        <option value="g">Gramm (g)</option>
+        <option value="oz">Unzen (oz)</option>
+    </select>
+    <div class="description">
+        Wähle die Einheit für die Gewichtsanzeige.
+    </div>
+</div>
+
+<div class="setting">
+    <label for="language">Sprache wählen:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="pt">Português</option>
+        <option value="ru">Русский</option>
+        <option value="zh">中文</option>
+    </select>
+    <div class="description">
+        Wähle die Sprache für die Anzeige der Informationen.
+    </div>
+</div>
+
+<div class="hint">
+    <strong>💡 Hinweis:</strong>
+    Änderungen werden automatisch gespeichert und sofort angewendet.
+    Du musst die Seite nicht neu laden.
+</div>
+
+<div class="status" id="status">✓ Einstellungen gespeichert!</div>
+
+<script src="options.js"></script>
 </body>
 </html>
-

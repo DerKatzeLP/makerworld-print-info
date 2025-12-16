@@ -13,6 +13,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
         }
+
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 16px;
@@ -20,6 +21,7 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             color: #333;
         }
+
         h1 {
             color: #667eea;
             margin-top: 0;
@@ -27,12 +29,14 @@
             align-items: center;
             gap: 12px;
         }
+
         h2 {
             color: #764ba2;
             border-bottom: 2px solid #667eea;
             padding-bottom: 8px;
             margin-top: 32px;
         }
+
         .step {
             background: #f5f7fa;
             border-left: 4px solid #667eea;
@@ -40,6 +44,7 @@
             margin: 16px 0;
             border-radius: 8px;
         }
+
         .step-number {
             display: inline-block;
             background: #667eea;
@@ -52,6 +57,7 @@
             font-weight: bold;
             margin-right: 12px;
         }
+
         code {
             background: #e8e8e8;
             padding: 2px 8px;
@@ -59,6 +65,7 @@
             font-family: 'Courier New', monospace;
             color: #c7254e;
         }
+
         .warning {
             background: #fff3cd;
             border-left: 4px solid #ffc107;
@@ -67,6 +74,7 @@
             border-radius: 8px;
             color: #856404;
         }
+
         .success {
             background: #d4edda;
             border-left: 4px solid #28a745;
@@ -75,15 +83,18 @@
             border-radius: 8px;
             color: #155724;
         }
+
         ul {
             line-height: 1.8;
         }
+
         .feature-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 12px;
             margin: 20px 0;
         }
+
         .feature {
             background: #f5f7fa;
             padding: 12px;
@@ -92,9 +103,11 @@
             align-items: center;
             gap: 8px;
         }
+
         .icon {
             font-size: 24px;
         }
+
         button {
             background: #667eea;
             color: white;
@@ -106,6 +119,7 @@
             font-weight: 600;
             transition: all 0.3s;
         }
+
         button:hover {
             background: #764ba2;
             transform: translateY(-2px);
@@ -114,154 +128,158 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>
-            <span class="icon">🔧</span>
-            MakerWorld Print Info Extension
-        </h1>
+<div class="container">
+    <h1>
+        <span class="icon">🔧</span>
+        MakerWorld Print Info Extension
+    </h1>
 
-        <p><strong>Version 1.0.0</strong> - Zeigt Druckzeit und Gewicht direkt auf der MakerWorld-Übersichtsseite an!</p>
+    <p><strong>Version 1.0.0</strong> - Zeigt Druckzeit und Gewicht direkt auf der MakerWorld-Übersichtsseite an!</p>
 
-        <div class="feature-list">
-            <div class="feature">
-                <span class="icon">⏱️</span>
-                <span>Druckzeit</span>
-            </div>
-            <div class="feature">
-                <span class="icon">⚖️</span>
-                <span>Gewicht</span>
-            </div>
-            <div class="feature">
-                <span class="icon">🚀</span>
-                <span>Schnell</span>
-            </div>
-            <div class="feature">
-                <span class="icon">🎨</span>
-                <span>Automatisch</span>
-            </div>
+    <div class="feature-list">
+        <div class="feature">
+            <span class="icon">⏱️</span>
+            <span>Druckzeit</span>
         </div>
-
-        <h2>📦 Installation</h2>
-
-        <div class="step">
-            <span class="step-number">1</span>
-            <strong>Chrome Extensions-Seite öffnen</strong>
-            <p>Gib in der Adresszeile ein: <code>chrome://extensions/</code></p>
+        <div class="feature">
+            <span class="icon">⚖️</span>
+            <span>Gewicht</span>
         </div>
-
-        <div class="step">
-            <span class="step-number">2</span>
-            <strong>Entwicklermodus aktivieren</strong>
-            <p>Aktiviere den Toggle-Schalter "Entwicklermodus" oben rechts auf der Seite.</p>
+        <div class="feature">
+            <span class="icon">🚀</span>
+            <span>Schnell</span>
         </div>
-
-        <div class="step">
-            <span class="step-number">3</span>
-            <strong>Extension laden</strong>
-            <p>Klicke auf den Button "Entpackte Erweiterung laden" und wähle diesen Ordner aus.</p>
-        </div>
-
-        <div class="step">
-            <span class="step-number">4</span>
-            <strong>Fertig!</strong>
-            <p>Die Extension ist nun aktiv. Besuche <a href="https://makerworld.com" target="_blank">makerworld.com</a> und sieh dir die neuen Informationen an!</p>
-        </div>
-
-        <div class="success">
-            <strong>✅ Erfolgreich installiert?</strong>
-            <p>Gehe zu einer Modellübersicht auf MakerWorld. Du solltest nun bei jedem Modell Druckzeit und Gewicht sehen!</p>
-        </div>
-
-        <h2>🎯 Wie funktioniert es?</h2>
-
-        <p>Die Extension:</p>
-        <ul>
-            <li>Erkennt automatisch alle Modell-Cards auf der Seite</li>
-            <li>Lädt die Detail-Informationen von MakerWorld</li>
-            <li>Extrahiert Druckzeit (in Stunden/Minuten) und Gewicht (in Gramm)</li>
-            <li>Zeigt die Informationen direkt in der Übersicht an</li>
-            <li>Funktioniert auch mit Lazy Loading / unendlichem Scrollen</li>
-        </ul>
-
-        <h2>🔍 Anzeige-Format</h2>
-
-        <div class="feature-list">
-            <div class="feature">
-                <span style="font-size: 20px;">⏱️</span>
-                <div>
-                    <strong>Druckzeit</strong><br>
-                    <small>z.B. "2h 30m" oder "45m"</small>
-                </div>
-            </div>
-            <div class="feature">
-                <span style="font-size: 20px;">⚖️</span>
-                <div>
-                    <strong>Gewicht</strong><br>
-                    <small>z.B. "125.5g"</small>
-                </div>
-            </div>
-        </div>
-
-        <h2>⚙️ Technische Details</h2>
-
-        <p><strong>Dateistruktur:</strong></p>
-        <ul>
-            <li><code>manifest.json</code> - Extension-Konfiguration</li>
-            <li><code>content.js</code> - Haupt-Script für die Funktionalität</li>
-            <li><code>styles.css</code> - Styling für die Anzeige</li>
-            <li><code>README.md</code> - Ausführliche Dokumentation</li>
-        </ul>
-
-        <div class="warning">
-            <strong>⚠️ Hinweis zu Icons:</strong>
-            <p>Die Extension funktioniert auch ohne Icons. Wenn du eigene Icons hinzufügen möchtest, erstelle drei PNG-Dateien (16x16, 48x48, 128x128 Pixel) und benenne sie <code>icon16.png</code>, <code>icon48.png</code> und <code>icon128.png</code>.</p>
-        </div>
-
-        <h2>🐛 Troubleshooting</h2>
-
-        <p><strong>Extension funktioniert nicht?</strong></p>
-        <ul>
-            <li>Stelle sicher, dass du auf makerworld.com bist</li>
-            <li>Öffne die Browser-Console (F12) und prüfe auf Fehler</li>
-            <li>Lade die Seite neu (Strg + Shift + R)</li>
-            <li>Überprüfe, ob die Extension aktiviert ist</li>
-        </ul>
-
-        <p><strong>Keine Daten werden angezeigt?</strong></p>
-        <ul>
-            <li>Manche Modelle haben keine Instanz-Daten</li>
-            <li>Prüfe die Console auf Netzwerk-Fehler</li>
-            <li>Warte einen Moment - die Extension lädt die Daten nach und nach</li>
-        </ul>
-
-        <h2>🔒 Datenschutz</h2>
-
-        <div class="success">
-            <p>Diese Extension:</p>
-            <ul style="margin-bottom: 0;">
-                <li>Sendet <strong>keine Daten</strong> an externe Server</li>
-                <li>Speichert <strong>keine persönlichen Informationen</strong></li>
-                <li>Lädt nur öffentliche Daten von MakerWorld</li>
-                <li>Funktioniert komplett <strong>lokal</strong> in deinem Browser</li>
-            </ul>
-        </div>
-
-        <h2>📝 Changelog</h2>
-
-        <p><strong>Version 1.0.0</strong> (15.12.2025)</p>
-        <ul>
-            <li>Initiale Version</li>
-            <li>Druckzeit-Anzeige</li>
-            <li>Gewicht-Anzeige</li>
-            <li>Support für Lazy Loading</li>
-            <li>Mehrsprachige Unterstützung</li>
-            <li>Performance-Optimierungen</li>
-        </ul>
-
-        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee;">
-            <p style="color: #999;">Erstellt mit ❤️ für die MakerWorld-Community</p>
+        <div class="feature">
+            <span class="icon">🎨</span>
+            <span>Automatisch</span>
         </div>
     </div>
+
+    <h2>📦 Installation</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>Chrome Extensions-Seite öffnen</strong>
+        <p>Gib in der Adresszeile ein: <code>chrome://extensions/</code></p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>Entwicklermodus aktivieren</strong>
+        <p>Aktiviere den Toggle-Schalter "Entwicklermodus" oben rechts auf der Seite.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>Extension laden</strong>
+        <p>Klicke auf den Button "Entpackte Erweiterung laden" und wähle diesen Ordner aus.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>Fertig!</strong>
+        <p>Die Extension ist nun aktiv. Besuche <a href="https://makerworld.com" target="_blank">makerworld.com</a> und
+            sieh dir die neuen Informationen an!</p>
+    </div>
+
+    <div class="success">
+        <strong>✅ Erfolgreich installiert?</strong>
+        <p>Gehe zu einer Modellübersicht auf MakerWorld. Du solltest nun bei jedem Modell Druckzeit und Gewicht
+            sehen!</p>
+    </div>
+
+    <h2>🎯 Wie funktioniert es?</h2>
+
+    <p>Die Extension:</p>
+    <ul>
+        <li>Erkennt automatisch alle Modell-Cards auf der Seite</li>
+        <li>Lädt die Detail-Informationen von MakerWorld</li>
+        <li>Extrahiert Druckzeit (in Stunden/Minuten) und Gewicht (in Gramm)</li>
+        <li>Zeigt die Informationen direkt in der Übersicht an</li>
+        <li>Funktioniert auch mit Lazy Loading / unendlichem Scrollen</li>
+    </ul>
+
+    <h2>🔍 Anzeige-Format</h2>
+
+    <div class="feature-list">
+        <div class="feature">
+            <span style="font-size: 20px;">⏱️</span>
+            <div>
+                <strong>Druckzeit</strong><br>
+                <small>z.B. "2h 30m" oder "45m"</small>
+            </div>
+        </div>
+        <div class="feature">
+            <span style="font-size: 20px;">⚖️</span>
+            <div>
+                <strong>Gewicht</strong><br>
+                <small>z.B. "125.5g"</small>
+            </div>
+        </div>
+    </div>
+
+    <h2>⚙️ Technische Details</h2>
+
+    <p><strong>Dateistruktur:</strong></p>
+    <ul>
+        <li><code>manifest.json</code> - Extension-Konfiguration</li>
+        <li><code>content.js</code> - Haupt-Script für die Funktionalität</li>
+        <li><code>styles.css</code> - Styling für die Anzeige</li>
+        <li><code>README.md</code> - Ausführliche Dokumentation</li>
+    </ul>
+
+    <div class="warning">
+        <strong>⚠️ Hinweis zu Icons:</strong>
+        <p>Die Extension funktioniert auch ohne Icons. Wenn du eigene Icons hinzufügen möchtest, erstelle drei
+            PNG-Dateien (16x16, 48x48, 128x128 Pixel) und benenne sie <code>icon16.png</code>, <code>icon48.png</code>
+            und <code>icon128.png</code>.</p>
+    </div>
+
+    <h2>🐛 Troubleshooting</h2>
+
+    <p><strong>Extension funktioniert nicht?</strong></p>
+    <ul>
+        <li>Stelle sicher, dass du auf makerworld.com bist</li>
+        <li>Öffne die Browser-Console (F12) und prüfe auf Fehler</li>
+        <li>Lade die Seite neu (Strg + Shift + R)</li>
+        <li>Überprüfe, ob die Extension aktiviert ist</li>
+    </ul>
+
+    <p><strong>Keine Daten werden angezeigt?</strong></p>
+    <ul>
+        <li>Manche Modelle haben keine Instanz-Daten</li>
+        <li>Prüfe die Console auf Netzwerk-Fehler</li>
+        <li>Warte einen Moment - die Extension lädt die Daten nach und nach</li>
+    </ul>
+
+    <h2>🔒 Datenschutz</h2>
+
+    <div class="success">
+        <p>Diese Extension:</p>
+        <ul style="margin-bottom: 0;">
+            <li>Sendet <strong>keine Daten</strong> an externe Server</li>
+            <li>Speichert <strong>keine persönlichen Informationen</strong></li>
+            <li>Lädt nur öffentliche Daten von MakerWorld</li>
+            <li>Funktioniert komplett <strong>lokal</strong> in deinem Browser</li>
+        </ul>
+    </div>
+
+    <h2>📝 Changelog</h2>
+
+    <p><strong>Version 1.0.0</strong> (15.12.2025)</p>
+    <ul>
+        <li>Initiale Version</li>
+        <li>Druckzeit-Anzeige</li>
+        <li>Gewicht-Anzeige</li>
+        <li>Support für Lazy Loading</li>
+        <li>Mehrsprachige Unterstützung</li>
+        <li>Performance-Optimierungen</li>
+    </ul>
+
+    <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee;">
+        <p style="color: #999;">Erstellt mit ❤️ für die MakerWorld-Community</p>
+    </div>
+</div>
 </body>
 </html>
 

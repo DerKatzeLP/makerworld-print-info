@@ -61,13 +61,14 @@
 3. Die Extension fügt automatisch **Druckzeit** ⏱️ und **Gewicht** ⚖️ zu jedem Model hinzu
 
 4. **Einstellungen**: Rechtsklick auf Extension-Icon → "Optionen"
-   - Debug-Modus aktivieren/deaktivieren
+    - Debug-Modus aktivieren/deaktivieren
 
 ## 🛠️ Technische Details
 
 ### Funktionsweise
 
 Die Extension:
+
 1. Erkennt Model-Cards auf MakerWorld-Seiten
 2. Extrahiert Model-ID und Slug aus den Links
 3. Lädt die JSON-Daten von MakerWorld's Next.js API
@@ -95,6 +96,7 @@ const browserAPI = typeof browser !== 'undefined' ? browser : chrome;
 ```
 
 Dies ermöglicht nahtlose Funktion in:
+
 - ✅ Chrome (Manifest V3)
 - ✅ Firefox (Manifest V3, ab Version 109+)
 - ✅ Edge (Chromium-basiert)
@@ -136,14 +138,17 @@ https://makerworld.com/_next/data/{buildId}/{lang}/models/{id}-{slug}.json
 ```
 
 Beispiel:
+
 ```json
 {
   "pageProps": {
     "design": {
       "instances": [
         {
-          "prediction": 7200,    // Druckzeit in Sekunden
-          "weight": 25.5         // Gewicht in Gramm
+          "prediction": 7200,
+          // Druckzeit in Sekunden
+          "weight": 25.5
+          // Gewicht in Gramm
         }
       ]
     }
@@ -153,7 +158,7 @@ Beispiel:
 
 ## 🤝 Beitragen
 
-Contributions sind willkommen! 
+Contributions sind willkommen!
 
 1. Fork das Repository
 2. Erstelle einen Feature-Branch (`git checkout -b feature/AmazingFeature`)
@@ -180,10 +185,13 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe [LICENSE](LICENSE) Da
 ## 📸 Screenshots
 
 ### Vor der Extension
+
 Standard MakerWorld-Ansicht ohne zusätzliche Informationen.
 
 ### Nach der Extension
+
 Jede Model-Card zeigt zusätzlich:
+
 - ⏱️ Druckzeit (z.B. "2h 30m")
 - ⚖️ Gewicht (z.B. "25.5g")
 

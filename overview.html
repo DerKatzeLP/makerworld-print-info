@@ -322,178 +322,185 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>
-                <span>🔧</span>
-                MakerWorld Print Info Extension
-            </h1>
-            <p class="tagline">Zeigt Druckzeit und Gewicht direkt auf der MakerWorld-Übersichtsseite an</p>
-            <span class="status-badge">✓ Produktionsbereit v1.0.0</span>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>
+            <span>🔧</span>
+            MakerWorld Print Info Extension
+        </h1>
+        <p class="tagline">Zeigt Druckzeit und Gewicht direkt auf der MakerWorld-Übersichtsseite an</p>
+        <span class="status-badge">✓ Produktionsbereit v1.0.0</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Features Grid -->
+        <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px;">🎯 Was macht diese Extension?</h2>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⏱️</div>
+                <h3>Druckzeit</h3>
+                <p>Zeigt die geschätzte Druckzeit direkt in der Übersicht an - formatiert in Stunden und Minuten.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h3>Gewicht</h3>
+                <p>Zeigt das benötigte Filament-Gewicht in Gramm - perfekt für die Materialplanung.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Automatisch</h3>
+                <p>Lädt alle Informationen automatisch beim Laden der Seite - kein manueller Aufwand nötig.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Nahtlos integriert</h3>
+                <p>Passt sich perfekt an das MakerWorld-Design an - sieht aus wie ein natives Feature.</p>
+            </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
+        <!-- Installation Steps -->
+        <div class="step-section">
+            <h2>📦 Installation in 3 Schritten</h2>
 
-            <!-- Features Grid -->
-            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px;">🎯 Was macht diese Extension?</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon">⏱️</div>
-                    <h3>Druckzeit</h3>
-                    <p>Zeigt die geschätzte Druckzeit direkt in der Übersicht an - formatiert in Stunden und Minuten.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">⚖️</div>
-                    <h3>Gewicht</h3>
-                    <p>Zeigt das benötigte Filament-Gewicht in Gramm - perfekt für die Materialplanung.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Automatisch</h3>
-                    <p>Lädt alle Informationen automatisch beim Laden der Seite - kein manueller Aufwand nötig.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🎨</div>
-                    <h3>Nahtlos integriert</h3>
-                    <p>Passt sich perfekt an das MakerWorld-Design an - sieht aus wie ein natives Feature.</p>
-                </div>
-            </div>
-
-            <!-- Installation Steps -->
-            <div class="step-section">
-                <h2>📦 Installation in 3 Schritten</h2>
-
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Chrome Extensions öffnen</h4>
-                            <p>Gib in der Adresszeile ein: <code style="background: #e8e8e8; padding: 4px 8px; border-radius: 4px;">chrome://extensions/</code></p>
-                        </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Chrome Extensions öffnen</h4>
+                        <p>Gib in der Adresszeile ein: <code
+                                style="background: #e8e8e8; padding: 4px 8px; border-radius: 4px;">chrome://extensions/</code>
+                        </p>
                     </div>
+                </div>
 
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Entwicklermodus aktivieren</h4>
-                            <p>Aktiviere den Toggle-Schalter "Entwicklermodus" oben rechts auf der Seite.</p>
-                        </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Entwicklermodus aktivieren</h4>
+                        <p>Aktiviere den Toggle-Schalter "Entwicklermodus" oben rechts auf der Seite.</p>
                     </div>
+                </div>
 
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Extension laden</h4>
-                            <p>Klicke auf "Entpackte Erweiterung laden" und wähle den <strong>makerworld-extension</strong> Ordner aus.</p>
-                        </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Extension laden</h4>
+                        <p>Klicke auf "Entpackte Erweiterung laden" und wähle den <strong>makerworld-extension</strong>
+                            Ordner aus.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- File Structure -->
-            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">📂 Dateistruktur</h2>
+        <!-- File Structure -->
+        <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">📂 Dateistruktur</h2>
 
-            <div class="file-structure">
-makerworld-extension/
-├── <span class="file">manifest.json</span>          <span class="comment"># Extension-Konfiguration (Manifest V3)</span>
-├── <span class="file">content.js</span>             <span class="comment"># Haupt-Script (Logik & API-Calls)</span>
-├── <span class="file">styles.css</span>             <span class="comment"># Styling für die Anzeige</span>
-├── <span class="file">README.md</span>              <span class="comment"># Ausführliche Dokumentation</span>
-├── <span class="file">QUICKSTART.md</span>          <span class="comment"># Schnellstart-Guide</span>
-├── <span class="file">ANLEITUNG.md</span>           <span class="comment"># Schritt-für-Schritt Anleitung</span>
-├── <span class="file">installation.html</span>      <span class="comment"># Visuelle Installationsanleitung</span>
-└── <span class="file">overview.html</span>          <span class="comment"># Diese Datei</span>
+        <div class="file-structure">
+            makerworld-extension/
+            ├── <span class="file">manifest.json</span> <span
+                class="comment"># Extension-Konfiguration (Manifest V3)</span>
+            ├── <span class="file">content.js</span> <span class="comment"># Haupt-Script (Logik & API-Calls)</span>
+            ├── <span class="file">styles.css</span> <span class="comment"># Styling für die Anzeige</span>
+            ├── <span class="file">README.md</span> <span class="comment"># Ausführliche Dokumentation</span>
+            ├── <span class="file">QUICKSTART.md</span> <span class="comment"># Schnellstart-Guide</span>
+            ├── <span class="file">ANLEITUNG.md</span> <span class="comment"># Schritt-für-Schritt Anleitung</span>
+            ├── <span class="file">installation.html</span> <span
+                class="comment"># Visuelle Installationsanleitung</span>
+            └── <span class="file">overview.html</span> <span class="comment"># Diese Datei</span>
+        </div>
+
+        <!-- Technical Details -->
+        <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">🔧 Technische Details</h2>
+
+        <div class="feature-list">
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">Manifest V3</span>
             </div>
-
-            <!-- Technical Details -->
-            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">🔧 Technische Details</h2>
-
-            <div class="feature-list">
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">Manifest V3</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">Lazy Loading</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">MutationObserver</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">Rate Limiting</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">Mehrsprachig</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">✅</span>
-                    <span class="feature-text">Responsive</span>
-                </div>
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">Lazy Loading</span>
             </div>
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">MutationObserver</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">Rate Limiting</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">Mehrsprachig</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text">Responsive</span>
+            </div>
+        </div>
 
-            <div class="info-box">
-                <h4>📊 API-Endpunkt</h4>
-                <p>Die Extension lädt Daten von:<br>
+        <div class="info-box">
+            <h4>📊 API-Endpunkt</h4>
+            <p>Die Extension lädt Daten von:<br>
                 <code style="background: white; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 8px;">
-                https://makerworld.com/_next/data/{buildId}/{lang}/models/{id}-{slug}.json
+                    https://makerworld.com/_next/data/{buildId}/{lang}/models/{id}-{slug}.json
                 </code></p>
-            </div>
-
-            <!-- Code Example -->
-            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">💻 Code-Beispiel</h2>
-
-            <div class="code-block">
-<span class="comment">// Extrahiere Druckzeit und Gewicht aus JSON</span>
-<span class="keyword">async function</span> fetchModelData(id, slug) {
-  <span class="keyword">const</span> url = <span class="string">`https://makerworld.com/_next/data/${buildId}/${lang}/models/${id}-${slug}.json`</span>;
-  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);
-  <span class="keyword">const</span> data = <span class="keyword">await</span> response.json();
-
-  <span class="keyword">return</span> {
-    printTime: data.pageProps.design.instances[<span class="number">0</span>].prediction,  <span class="comment">// in Sekunden</span>
-    weight: data.pageProps.design.instances[<span class="number">0</span>].weight         <span class="comment">// in Gramm</span>
-  };
-}
-            </div>
-
-            <!-- Success Box -->
-            <div class="success-box">
-                <h4>✅ Bereit zum Testen!</h4>
-                <p>Die Extension ist vollständig funktionsfähig. Lade sie in Chrome und besuche makerworld.com, um die Informationen zu sehen.</p>
-            </div>
-
-            <!-- Warning Box -->
-            <div class="warning-box">
-                <h4>⚠️ Wichtiger Hinweis</h4>
-                <p>Die Extension lädt Daten sequenziell mit einem Delay von 200ms zwischen Requests, um die Server nicht zu überlasten. Bei vielen Modellen kann es daher etwas dauern, bis alle Informationen geladen sind.</p>
-            </div>
-
         </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>🚀 Bereit loszulegen?</h2>
-            <p>Installiere die Extension und erlebe MakerWorld mit erweiterten Informationen!</p>
-            <a href="chrome://extensions/" class="button">Extension installieren</a>
+        <!-- Code Example -->
+        <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">💻 Code-Beispiel</h2>
 
-            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.3);">
-                <p style="opacity: 0.8; font-size: 14px;">
-                    Version 1.0.0 • Erstellt am 15.12.2025<br>
-                    Erstellt mit ❤️ für die MakerWorld-Community
-                </p>
-            </div>
+        <div class="code-block">
+            <span class="comment">// Extrahiere Druckzeit und Gewicht aus JSON</span>
+            <span class="keyword">async function</span> fetchModelData(id, slug) {
+            <span class="keyword">const</span> url = <span class="string">`https://makerworld.com/_next/data/${buildId}/${lang}/models/${id}-${slug}.json`</span>;
+            <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);
+            <span class="keyword">const</span> data = <span class="keyword">await</span> response.json();
+
+            <span class="keyword">return</span> {
+            printTime: data.pageProps.design.instances[<span class="number">0</span>].prediction, <span class="comment">// in Sekunden</span>
+            weight: data.pageProps.design.instances[<span class="number">0</span>].weight <span class="comment">// in Gramm</span>
+            };
+            }
+        </div>
+
+        <!-- Success Box -->
+        <div class="success-box">
+            <h4>✅ Bereit zum Testen!</h4>
+            <p>Die Extension ist vollständig funktionsfähig. Lade sie in Chrome und besuche makerworld.com, um die
+                Informationen zu sehen.</p>
+        </div>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <h4>⚠️ Wichtiger Hinweis</h4>
+            <p>Die Extension lädt Daten sequenziell mit einem Delay von 200ms zwischen Requests, um die Server nicht zu
+                überlasten. Bei vielen Modellen kann es daher etwas dauern, bis alle Informationen geladen sind.</p>
+        </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>🚀 Bereit loszulegen?</h2>
+        <p>Installiere die Extension und erlebe MakerWorld mit erweiterten Informationen!</p>
+        <a href="chrome://extensions/" class="button">Extension installieren</a>
+
+        <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.3);">
+            <p style="opacity: 0.8; font-size: 14px;">
+                Version 1.0.0 • Erstellt am 15.12.2025<br>
+                Erstellt mit ❤️ für die MakerWorld-Community
+            </p>
         </div>
     </div>
+</div>
 </body>
 </html>
 
