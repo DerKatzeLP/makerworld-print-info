@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "MakerWorld Print Info",
+  "version": "1.0.0",
+  "description": "Zeigt Druckzeit und Gewicht für MakerWorld-Modelle auf der Übersichtsseite an",
+  "author": "David Fischer",
+  "homepage_url": "https://github.com/your-username/makerworld-print-info",
+  "icons": {
+    "48": "icon48.png",
+    "96": "icon96.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://makerworld.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://makerworld.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "makerworld-print-info@davidfischer.dev",
+      "strict_min_version": "109.0"
+    }
+  }
+}
+

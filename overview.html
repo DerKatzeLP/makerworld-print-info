@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakerWorld Extension - Übersicht</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header .tagline {
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .main-content {
+            background: white;
+            padding: 40px;
+            margin-top: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .step-section {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+
+        .step-section h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .steps {
+            display: grid;
+            gap: 16px;
+        }
+
+        .step {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        .code-block .keyword {
+            color: #c678dd;
+        }
+
+        .code-block .string {
+            color: #98c379;
+        }
+
+        .code-block .number {
+            color: #d19a66;
+        }
+
+        .code-block .comment {
+            color: #5c6370;
+            font-style: italic;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+        }
+
+        .feature-text {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 48px;
+            border-radius: 0 0 16px 16px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .file-structure {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 24px 0;
+        }
+
+        .file-structure .folder {
+            color: #61afef;
+        }
+
+        .file-structure .file {
+            color: #98c379;
+        }
+
+        .file-structure .comment {
+            color: #5c6370;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+
+        .info-box h4 {
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #0d47a1;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+
+        .warning-box h4 {
+            color: #f57f17;
+            margin-bottom: 8px;
+        }
+
+        .warning-box p {
+            color: #f57f17;
+            line-height: 1.6;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+
+        .success-box h4 {
+            color: #155724;
+            margin-bottom: 8px;
+        }
+
+        .success-box p {
+            color: #155724;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <span>🔧</span>
+                MakerWorld Print Info Extension
+            </h1>
+            <p class="tagline">Zeigt Druckzeit und Gewicht direkt auf der MakerWorld-Übersichtsseite an</p>
+            <span class="status-badge">✓ Produktionsbereit v1.0.0</span>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Features Grid -->
+            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px;">🎯 Was macht diese Extension?</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Druckzeit</h3>
+                    <p>Zeigt die geschätzte Druckzeit direkt in der Übersicht an - formatiert in Stunden und Minuten.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Gewicht</h3>
+                    <p>Zeigt das benötigte Filament-Gewicht in Gramm - perfekt für die Materialplanung.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Automatisch</h3>
+                    <p>Lädt alle Informationen automatisch beim Laden der Seite - kein manueller Aufwand nötig.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Nahtlos integriert</h3>
+                    <p>Passt sich perfekt an das MakerWorld-Design an - sieht aus wie ein natives Feature.</p>
+                </div>
+            </div>
+
+            <!-- Installation Steps -->
+            <div class="step-section">
+                <h2>📦 Installation in 3 Schritten</h2>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Chrome Extensions öffnen</h4>
+                            <p>Gib in der Adresszeile ein: <code style="background: #e8e8e8; padding: 4px 8px; border-radius: 4px;">chrome://extensions/</code></p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Entwicklermodus aktivieren</h4>
+                            <p>Aktiviere den Toggle-Schalter "Entwicklermodus" oben rechts auf der Seite.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Extension laden</h4>
+                            <p>Klicke auf "Entpackte Erweiterung laden" und wähle den <strong>makerworld-extension</strong> Ordner aus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Structure -->
+            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">📂 Dateistruktur</h2>
+
+            <div class="file-structure">
+makerworld-extension/
+├── <span class="file">manifest.json</span>          <span class="comment"># Extension-Konfiguration (Manifest V3)</span>
+├── <span class="file">content.js</span>             <span class="comment"># Haupt-Script (Logik & API-Calls)</span>
+├── <span class="file">styles.css</span>             <span class="comment"># Styling für die Anzeige</span>
+├── <span class="file">README.md</span>              <span class="comment"># Ausführliche Dokumentation</span>
+├── <span class="file">QUICKSTART.md</span>          <span class="comment"># Schnellstart-Guide</span>
+├── <span class="file">ANLEITUNG.md</span>           <span class="comment"># Schritt-für-Schritt Anleitung</span>
+├── <span class="file">installation.html</span>      <span class="comment"># Visuelle Installationsanleitung</span>
+└── <span class="file">overview.html</span>          <span class="comment"># Diese Datei</span>
+            </div>
+
+            <!-- Technical Details -->
+            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">🔧 Technische Details</h2>
+
+            <div class="feature-list">
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">Manifest V3</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">Lazy Loading</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">MutationObserver</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">Rate Limiting</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">Mehrsprachig</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✅</span>
+                    <span class="feature-text">Responsive</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📊 API-Endpunkt</h4>
+                <p>Die Extension lädt Daten von:<br>
+                <code style="background: white; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 8px;">
+                https://makerworld.com/_next/data/{buildId}/{lang}/models/{id}-{slug}.json
+                </code></p>
+            </div>
+
+            <!-- Code Example -->
+            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 24px; margin-top: 48px;">💻 Code-Beispiel</h2>
+
+            <div class="code-block">
+<span class="comment">// Extrahiere Druckzeit und Gewicht aus JSON</span>
+<span class="keyword">async function</span> fetchModelData(id, slug) {
+  <span class="keyword">const</span> url = <span class="string">`https://makerworld.com/_next/data/${buildId}/${lang}/models/${id}-${slug}.json`</span>;
+  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);
+  <span class="keyword">const</span> data = <span class="keyword">await</span> response.json();
+
+  <span class="keyword">return</span> {
+    printTime: data.pageProps.design.instances[<span class="number">0</span>].prediction,  <span class="comment">// in Sekunden</span>
+    weight: data.pageProps.design.instances[<span class="number">0</span>].weight         <span class="comment">// in Gramm</span>
+  };
+}
+            </div>
+
+            <!-- Success Box -->
+            <div class="success-box">
+                <h4>✅ Bereit zum Testen!</h4>
+                <p>Die Extension ist vollständig funktionsfähig. Lade sie in Chrome und besuche makerworld.com, um die Informationen zu sehen.</p>
+            </div>
+
+            <!-- Warning Box -->
+            <div class="warning-box">
+                <h4>⚠️ Wichtiger Hinweis</h4>
+                <p>Die Extension lädt Daten sequenziell mit einem Delay von 200ms zwischen Requests, um die Server nicht zu überlasten. Bei vielen Modellen kann es daher etwas dauern, bis alle Informationen geladen sind.</p>
+            </div>
+
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>🚀 Bereit loszulegen?</h2>
+            <p>Installiere die Extension und erlebe MakerWorld mit erweiterten Informationen!</p>
+            <a href="chrome://extensions/" class="button">Extension installieren</a>
+
+            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.3);">
+                <p style="opacity: 0.8; font-size: 14px;">
+                    Version 1.0.0 • Erstellt am 15.12.2025<br>
+                    Erstellt mit ❤️ für die MakerWorld-Community
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

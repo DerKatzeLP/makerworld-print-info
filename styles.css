@@ -1,0 +1,76 @@
+/* MakerWorld Print Info Extension - Styles */
+
+.makerworld-print-info {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.makerworld-print-info .mw-css-1rkzspq {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #B1FF42;
+  font-weight: 500;
+}
+
+.makerworld-print-info .mw-css-1rkzspq svg {
+  width: 16px;
+  height: 16px;
+  color: #B1FF42;
+}
+
+.makerworld-print-info .mw-css-1rkzspq span {
+  color: #D9D9D9;
+  font-size: 13px;
+}
+
+/* Loading-Animation für Cards, die noch verarbeitet werden */
+.js-design-card[data-processed-print-info="false"] .makerworld-print-info {
+  opacity: 0.5;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .makerworld-print-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .makerworld-print-info .mw-css-1rkzspq {
+    font-size: 12px;
+  }
+}
+
+/* Dark Mode Unterstützung */
+@media (prefers-color-scheme: light) {
+  .makerworld-print-info {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .makerworld-print-info .mw-css-1rkzspq {
+    color: #4CAF50;
+  }
+
+  .makerworld-print-info .mw-css-1rkzspq svg {
+    color: #4CAF50;
+  }
+
+  .makerworld-print-info .mw-css-1rkzspq span {
+    color: #424242;
+  }
+}
+
